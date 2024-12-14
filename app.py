@@ -1,14 +1,11 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
 from openai import OpenAI
 import time
-import json
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import os
 from dotenv import load_dotenv
-from functools import wraps
 from datetime import datetime
 
 # Load environment variables from .env file
