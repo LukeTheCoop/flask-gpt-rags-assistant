@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 from openai import OpenAI
-import time
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -156,7 +155,6 @@ def call_message(user_message):
             thread_id=thread.id,
             run_id=run.id,
         )
-        time.sleep(0.5)
 
     if run.status == 'requires_action':
         print('CAUGHT ACTION')
@@ -186,7 +184,6 @@ def call_message(user_message):
                         thread_id=thread.id,
                         run_id=run.id,
                     )
-                    time.sleep(0.5)
             except Exception as e:
                 print("Failed to submit tool outputs:", e)
         else:

@@ -35,5 +35,5 @@
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/your-repo/flask-gpt-rags-assistant.git
+git clone https://github.com/LukeTheCoop/flask-gpt-rags-assistant.git
 cd flask-gpt-rags-assistant
