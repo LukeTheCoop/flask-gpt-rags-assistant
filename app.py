@@ -35,7 +35,7 @@ OPENAI_API_KEY = os.getenv('API_KEY')
 EMAIL_APP_PASSWORD = os.getenv('EMAIL_APP_PASSWORD')
 
 with open('util/assistant_instructions.txt', 'r') as file:
-    luke_instructions = file.read()
+    assistant_instructions = file.read()
 
 LOG_FILE_PATH = 'data/what_they_ask.txt'
 
@@ -93,7 +93,7 @@ def send_email(name, email, subject, content):
 # Initialize assistant and other OpenAI components
 assistant = client.beta.assistants.create(
     name="Assistant Name",
-    instructions=luke_instructions,
+    instructions=assistant_instructions,
     model="gpt-4o-mini",
     tools=[{"type": "file_search"}, {
         "type": "function",
